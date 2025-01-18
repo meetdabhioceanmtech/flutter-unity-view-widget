@@ -34,7 +34,9 @@ apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 35
+    // if (project.android.hasProperty("namespace")) {
     namespace 'com.xraph.plugin.flutter_unity_widget'
+    // }
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -66,7 +68,10 @@ dependencies {
     implementation "androidx.annotation:annotation:$annotation_version"
 
     compileOnly rootProject.findProject(":flutter_plugin_android_lifecycle")
+    implementation "io.reactivex.rxjava3:rxjava:3.1.4"
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
 
+    
     // FOR DEV ONLY
 //    implementation(name: 'flutter', ext:'jar')
 }
