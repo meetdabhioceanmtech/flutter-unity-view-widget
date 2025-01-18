@@ -29,10 +29,20 @@ android {
     compileSdkVersion 34
     
     namespace 'com.xraph.plugin.flutter_unity_widget_example'
+    ndkVersion flutter.ndkVersion
 
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    // sourceSets {
+    //     main.java.srcDirs += 'src/main/kotlin'
+    // }
 
     lintOptions {
         disable 'InvalidPackage'
